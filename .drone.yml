@@ -24,3 +24,10 @@ steps:
       from_secret: docker_password
     repo: hotio/sonarr3
     auto_tag: true
+
+- name: microbadger
+  image: plugins/webhook
+  pull: always
+  settings:
+    urls:
+      - https://hooks.microbadger.com/images/hotio/sonarr3/I2gK5ms4w24isHqBEphmbD67FQk=
