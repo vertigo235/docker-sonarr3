@@ -8,7 +8,7 @@ if [[ "${VERSION}" != "image" ]]; then
     else
         case "${VERSION}" in
             stable)
-                url="https://services.sonarr.tv/v1/download/phantom/latest?version=3&os=linux"
+                url="https://services.sonarr.tv/v1/download/phantom-develop/latest?version=3&os=linux"
                 ;;
             unstable)
                 url="https://services.sonarr.tv/v1/download/phantom-develop/latest?version=3&os=linux"
