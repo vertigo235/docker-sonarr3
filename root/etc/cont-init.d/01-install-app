@@ -17,7 +17,7 @@ if [[ "${VERSION}" != "image" ]]; then
                 url="${VERSION}"
                 ;;
         esac
-        rm -rf "${APP_DIR:?}/bin" && mkdir -p "${APP_DIR}/bin" && tempfile="$(mktemp)" && curl -fsSL -o "${tempfile}" "${url}" && tar xzf "${tempfile}" -C "${APP_DIR}/bin" --strip-components=1 && chmod -R u=rwX,go=rX "${APP_DIR}" && rm -f "${tempfile}" && INSTALL_OK="yes"
+        rm -rf "${APP_DIR}" && mkdir -p "${APP_DIR}/bin" && tempfile="$(mktemp)" && curl -fsSL -o "${tempfile}" "${url}" && tar xzf "${tempfile}" -C "${APP_DIR}/bin" --strip-components=1 && chmod -R u=rwX,go=rX "${APP_DIR}" && rm -f "${tempfile}" && INSTALL_OK="yes"
         if [[ "${INSTALL_OK}" != "yes" ]]; then
             echo -e '\e[31m'"Installation of \"${url}\" failed!"'\e[0m'
             exit 1
